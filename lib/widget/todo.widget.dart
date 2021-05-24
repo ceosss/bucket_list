@@ -44,7 +44,6 @@ class _TodoState extends State<Todo> {
               children: [
                 Icon(
                   Icons.drag_handle_rounded,
-                  color: Colors.white,
                 ),
                 SizedBox(
                   width: 10,
@@ -52,7 +51,7 @@ class _TodoState extends State<Todo> {
                 Container(
                   width: 15,
                   height: 60,
-                  color: Colors.blue,
+                  color: Colors.green,
                 ),
               ],
             ),

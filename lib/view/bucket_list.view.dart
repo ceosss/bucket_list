@@ -8,22 +8,24 @@ class BucketList extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.dark,
       theme: ThemeData(
-          accentColor: Color(0xff1E292F),
-          scaffoldBackgroundColor: Color(0xff1E292F),
-          textTheme: TextTheme(
-            headline1: TextStyle(
-              fontSize: 32,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-            headline2: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-            bodyText1: TextStyle(fontSize: 17),
-            bodyText2: TextStyle(),
-          )),
+        accentColor: Color(0xff1E292F),
+        scaffoldBackgroundColor: Color(0xff1E292F),
+        iconTheme: IconThemeData(color: Colors.white),
+        textTheme: TextTheme(
+          headline1: TextStyle(
+            fontSize: 32,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+          headline2: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+          bodyText1: TextStyle(fontSize: 17),
+          bodyText2: TextStyle(),
+        ),
+      ),
       home: Home(),
     );
   }
