@@ -1,6 +1,6 @@
 # bucket_list
 
-A new Flutter project.
+An android app made to keep track of you goals and bucket list items
 
 ## Getting Started
 
