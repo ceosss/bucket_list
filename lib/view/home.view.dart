@@ -1,6 +1,5 @@
 import 'package:bucket_list/widget/category_card.widget.dart';
 import 'package:bucket_list/widget/head.widget.dart';
-import 'package:bucket_list/widget/todo.widget.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
