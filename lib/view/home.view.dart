@@ -1,4 +1,5 @@
 import 'package:bucket_list/widget/category_card.widget.dart';
+import 'package:bucket_list/widget/head.widget.dart';
 import 'package:bucket_list/widget/todo.widget.dart';
 import 'package:flutter/material.dart';
 
@@ -14,87 +15,38 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 40),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              alignment: Alignment.centerLeft,
-              child: Icon(
-                Icons.supervised_user_circle,
-                size: 40,
+      child: Column(
+        children: [
+          Column(
+            children: [
+              Head(),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: GridView.count(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 15,
+                  mainAxisSpacing: 15,
+                  shrinkWrap: true,
+                  children: [
+                    CategoryCard(),
+                    CategoryCard(),
+                    CategoryCard(),
+                    CategoryCard(),
+                    CategoryCard(),
+                    CategoryCard(),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  Text(
-                    "Buckets",
-                    style: Theme.of(context).textTheme.headline1,
-                  ),
-                  Text(
-                    "Edit Category",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1
-                        .copyWith(color: Colors.grey),
-                  )
-                ],
+              Container(
+                child: Text(
+                  "Todo / Done",
+                  style: Theme.of(context).textTheme.headline2,
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: GridView.count(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 15,
-                      mainAxisSpacing: 15,
-                      shrinkWrap: true,
-                      children: [
-                        CategoryCard(),
-                        CategoryCard(),
-                        CategoryCard(),
-                        CategoryCard(),
-                        CategoryCard(),
-                        CategoryCard(),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    child: Text(
-                      "Todo / Done",
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    child: Column(
-                      children: [
-                        Todo(),
-                        Todo(),
-                        Todo(),
-                        Todo(),
-                        Todo(),
-                        Todo(),
-                        Todo(),
-                        Todo(),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
+              SizedBox(height: 20),
+            ],
+          ),
+        ],
       ),
     ));
   }
