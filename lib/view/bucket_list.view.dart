@@ -8,7 +8,7 @@ class BucketList extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.dark,
       theme: ThemeData(
-        accentColor: Color(0xff1E292F),
+        accentColor: Color(0xffFF6B64),
         scaffoldBackgroundColor: Color(0xff1E292F),
         iconTheme: IconThemeData(color: Colors.white),
         textTheme: TextTheme(
