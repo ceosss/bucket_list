@@ -1,5 +1,6 @@
 import 'package:bucket_list/widget/categories.widget.dart';
 import 'package:bucket_list/widget/head.widget.dart';
+import 'package:bucket_list/widget/todo.widget.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -16,21 +17,32 @@ class _HomeState extends State<Home> {
       body: Container(
         child: Column(
           children: [
-            Column(
-              children: [
-                Head(),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Categories(),
+            Head(),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Categories(),
+            ),
+            Container(
+              child: Text(
+                "Todo / Done",
+                style: Theme.of(context).textTheme.headline2,
+              ),
+            ),
+            SizedBox(height: 20),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Todo(),
+                    Todo(),
+                    Todo(),
+                    Todo(),
+                    Todo(),
+                    Todo(),
+                    Todo(),
+                  ],
                 ),
-                Container(
-                  child: Text(
-                    "Todo / Done",
-                    style: Theme.of(context).textTheme.headline2,
-                  ),
-                ),
-                SizedBox(height: 20),
-              ],
+              ),
             ),
           ],
         ),
