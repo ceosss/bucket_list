@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:random_color/random_color.dart';
 
 class Todo extends StatefulWidget {
   Todo({Key key}) : super(key: key);
@@ -8,6 +9,7 @@ class Todo extends StatefulWidget {
 }
 
 class _TodoState extends State<Todo> {
+  RandomColor _randomColor = RandomColor();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,7 +53,9 @@ class _TodoState extends State<Todo> {
                 Container(
                   width: 15,
                   height: 60,
-                  color: Colors.green,
+                  color: _randomColor.randomColor(
+                    colorBrightness: ColorBrightness.light,
+                  ),
                 ),
               ],
             ),
