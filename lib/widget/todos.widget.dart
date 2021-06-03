@@ -1,3 +1,4 @@
+import 'package:bucket_list/model/todo.model.dart';
 import 'package:bucket_list/widget/todo.widget.dart';
 import 'package:flutter/material.dart';
 
@@ -6,17 +7,11 @@ class Todos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Todo(),
-          Todo(),
-          Todo(),
-          Todo(),
-          Todo(),
-          Todo(),
-          Todo(),
-        ],
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      itemCount: dummyTodos.length,
+      itemBuilder: (context, index) => Todo(
+        data: dummyTodos[index],
       ),
     );
   }

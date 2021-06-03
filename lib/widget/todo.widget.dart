@@ -1,16 +1,16 @@
+import 'package:bucket_list/model/todo.model.dart';
 import 'package:circular_check_box/circular_check_box.dart';
 import 'package:flutter/material.dart';
-import 'package:random_color/random_color.dart';
 
 class Todo extends StatefulWidget {
-  Todo({Key key}) : super(key: key);
+  final TodoModel data;
+  Todo({Key key, @required this.data}) : super(key: key);
 
   @override
   _TodoState createState() => _TodoState();
 }
 
 class _TodoState extends State<Todo> {
-  RandomColor _randomColor = RandomColor();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,14 +29,14 @@ class _TodoState extends State<Todo> {
       child: Row(
         children: [
           CircularCheckBox(
-              value: true,
+              value: widget.data.done,
               materialTapTargetSize: MaterialTapTargetSize.padded,
               onChanged: (bool x) {
                 // someBooleanValue = !someBooleanValue;
               }),
           Expanded(
             child: Text(
-              "Hello",
+              widget.data.todo,
               style: Theme.of(context).textTheme.bodyText1.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -56,9 +56,7 @@ class _TodoState extends State<Todo> {
                 Container(
                   width: 15,
                   height: 60,
-                  color: _randomColor.randomColor(
-                    colorBrightness: ColorBrightness.light,
-                  ),
+                  color: widget.data.color,
                 ),
               ],
             ),
