@@ -1,3 +1,4 @@
+import 'package:circular_check_box/circular_check_box.dart';
 import 'package:flutter/material.dart';
 import 'package:random_color/random_color.dart';
 
@@ -27,10 +28,12 @@ class _TodoState extends State<Todo> {
       ),
       child: Row(
         children: [
-          Checkbox(
-            value: true,
-            onChanged: (value) {},
-          ),
+          CircularCheckBox(
+              value: true,
+              materialTapTargetSize: MaterialTapTargetSize.padded,
+              onChanged: (bool x) {
+                // someBooleanValue = !someBooleanValue;
+              }),
           Expanded(
             child: Text(
               "Hello",
