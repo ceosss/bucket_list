@@ -12,6 +12,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _toggle = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,7 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 20),
             ToggleSwitch(
-              initialLabelIndex: 0,
+              initialLabelIndex: _toggle,
               labels: ['Todo', 'Done'],
               cornerRadius: 50,
               activeBgColor: Theme.of(context).accentColor,
@@ -33,7 +35,10 @@ class _HomeState extends State<Home> {
               inactiveFgColor: Colors.white,
               fontSize: 16,
               onToggle: (index) {
-                print('switched to: $index');
+                // Update toggle
+                setState(() {
+                  _toggle = index;
+                });
               },
             ),
             SizedBox(height: 20),
