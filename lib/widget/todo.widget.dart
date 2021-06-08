@@ -29,11 +29,12 @@ class _TodoState extends State<Todo> {
       child: Row(
         children: [
           CircularCheckBox(
-              value: widget.data.done,
-              materialTapTargetSize: MaterialTapTargetSize.padded,
-              onChanged: (bool x) {
-                // someBooleanValue = !someBooleanValue;
-              }),
+            value: widget.data.done,
+            materialTapTargetSize: MaterialTapTargetSize.padded,
+            onChanged: (bool x) {
+              // someBooleanValue = !someBooleanValue;
+            },
+          ),
           Expanded(
             child: Text(
               widget.data.todo,

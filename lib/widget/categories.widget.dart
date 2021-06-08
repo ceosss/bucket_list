@@ -7,19 +7,12 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 3,
-      crossAxisSpacing: 15,
-      mainAxisSpacing: 15,
-      shrinkWrap: true,
-      children: [
-        CategoryCard(),
-        CategoryCard(),
-        CategoryCard(),
-        CategoryCard(),
-        CategoryCard(),
-        CategoryCard(),
-      ],
-    );
+        crossAxisCount: 3,
+        crossAxisSpacing: 15,
+        mainAxisSpacing: 15,
+        shrinkWrap: true,
+        children:
+            categoriesData.map((name) => CategoryCard(name: name)).toList());
   }
 }
 
