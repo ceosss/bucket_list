@@ -22,3 +22,12 @@ class Categories extends StatelessWidget {
     );
   }
 }
+
+List<String> categoriesData = [
+  "all",
+  "adventure",
+  "career",
+  "fitness",
+  "hobbies",
+  "travel",
+];
